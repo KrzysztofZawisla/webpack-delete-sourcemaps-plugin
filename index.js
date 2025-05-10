@@ -76,7 +76,7 @@ var DeleteSourceMapsPlugin = /** @class */ (function () {
                         outputPath_1 = compilation.outputOptions.path;
                         promises = Object
                             .keys(compilation.assets)
-                            .filter(function (filename) { return filename.endsWith('.js.map') || filename.endsWith('.css.map'); })
+                            .filter(function (filename) { return filename.endsWith('.js.map') || filename.endsWith('.cjs.map') || filename.endsWith('.mjs.map') || filename.endsWith('.css.map'); })
                             .map(function (filename) {
                             if (!outputPath_1)
                                 return Promise.resolve();

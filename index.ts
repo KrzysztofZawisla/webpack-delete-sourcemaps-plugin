@@ -38,7 +38,7 @@ export class DeleteSourceMapsPlugin implements WebpackPluginInstance {
         const outputPath = compilation.outputOptions.path
         const promises = Object
           .keys(compilation.assets)
-          .filter((filename) => filename.endsWith('.js.map') || filename.endsWith('.css.map'))
+          .filter((filename) => filename.endsWith('.js.map') || filename.endsWith('.cjs.map') || filename.endsWith('.mjs.map') || filename.endsWith('.css.map'))
           .map((filename) => {
             if (!outputPath) return Promise.resolve()
             const filePath = path.join(outputPath, filename)
